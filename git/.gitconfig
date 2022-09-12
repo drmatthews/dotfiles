@@ -1,0 +1,30 @@
+[user]
+	name = Daniel Matthews
+	email = d.matthews@ucl.ac.uk
+	signingkey = 3BE919A3FC4A8D9A
+[core]
+	excludesfile = /Users/daniel/.gitignore_global
+	editor = nvim
+	pager = diffr | less -R
+[alias]
+	logg = log --graph --decorate --oneline --abbrev --all
+	spush = push --recurse-submodules=on-demand
+	spull = !git pull && git submodule sync --recursive && git submodule update --init --recursive
+	merge = merge --no-ff
+[pull]
+	ff = only
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[commit]
+	gpgsign = true
+[fetch]
+	prune = true
+[diff]
+	colorMoved = zebra
+[submodule]
+	recurse = true
+[init]
+	defaultBranch = main
